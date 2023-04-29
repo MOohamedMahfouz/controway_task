@@ -13,7 +13,7 @@
                         @csrf
                         <div class="flex flex-col space-y-2">
                             <label for="file" class="text-white text-gray-700 font-medium">Select Excel file:</label>
-                            <input type="file" name="file" id="file" class="w-96 py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300">
+                            <input type="file" name="file" id="file" class="w-96 py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300" required>
                         </div>
                         <button type="submit" class="mt-4 px-4 py-2 font-bold text-white bg-blue-500 rounded-md hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300">
                             Import

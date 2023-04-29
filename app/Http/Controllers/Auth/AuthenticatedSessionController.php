@@ -28,14 +28,14 @@ class AuthenticatedSessionController extends Controller
     {
         $credentials = $request->only('email', 'password');
         $user = User::where('email',$credentials['email'])->first();
-        if ($user->status === 'active') {
+        if ($user?->status === 'active') {
             $request->authenticate();
             $request->session()->regenerate();
             return redirect()->intended(RouteServiceProvider::HOME);
         } else {
             return back()->withErrors([
                 'email' => 'The provided credentials do not match our records or your account is inactive.',
-            ])->withInput();    
+            ])->withInput();
         }
     }
 
