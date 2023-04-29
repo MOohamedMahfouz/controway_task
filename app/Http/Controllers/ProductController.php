@@ -127,6 +127,10 @@ class ProductController extends Controller
                 $isFirstElement = 0;
                 continue;
             }
+            if (!is_numeric($data[$map['qty']])) {
+                // the value is not a number
+                return to_route('dashboard')->with('error','Quantity Column should be a number');
+            }
             // Create a new product record
             $product = new Product();
             $product->name = $data[$map['products']];

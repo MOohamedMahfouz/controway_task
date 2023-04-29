@@ -8,6 +8,10 @@
                 <div class="bg-green-500 text-white text-xl font-bold px-6 py-4 rounded-lg mb-6">
                     {{ session()->get('success') }}
                 </div>
+            @elseif (session()->has('error'))
+                <div class="bg-red-500 text-white text-xl font-bold px-6 py-4 rounded-lg mb-6">
+                    {{ session()->get('error') }}
+                </div>
             @endif
         </h2>
     </x-slot>
