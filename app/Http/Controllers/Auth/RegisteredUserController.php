@@ -36,10 +36,6 @@ class RegisteredUserController extends Controller
             'email' => [
                 'required',
                 'email',
-                // Rule::unique('users')->where(function ($query) use ($request) {
-                //     $domain = explode('@', $request->email)[1];
-                //     $query->where('email', 'LIKE', "%@$domain");
-                // }),
                 function ($attribute, $value, $fail) {
                     $domain = explode('@', $value)[1];
                     $tld = explode('.', $domain)[0];
@@ -61,9 +57,6 @@ class RegisteredUserController extends Controller
         ]);
 
         event(new Registered($user));
-
-        // Auth::login($user);
-
         return redirect('/login');
     }
 
