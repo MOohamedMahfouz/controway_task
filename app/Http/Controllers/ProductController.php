@@ -8,13 +8,6 @@ use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class ProductController extends Controller
 {
-    // public function import() {
-    //     $spreadsheet = new Spreadsheet();
-    //     $activeWorksheet = $spreadsheet->getActiveSheet();
-    //     $activeWorksheet->setCellValue('A1', 'Hello World !');
-    //     $writer = new Xlsx($spreadsheet);
-    //     $writer->save('hello world.xlsx');
-    // }
 
 
 
