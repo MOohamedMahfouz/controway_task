@@ -27,6 +27,14 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 Route::get('/',function() {
     return view('welcome');
 });
+// Route::post('/show-excel-file',function() {
+//     return view('show_excel',[
+//         'data' => []
+//     ]);
+// });
+
+
+// Route::get('/show-excel-file/{fileName}', [ExcelController::class, 'showExcelFile'])->name('show-excel-file');
 
 
 Route::get('/dashboard', function () {
@@ -38,7 +46,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::post('/import-products', [ProductController::class, 'importProducts']);
+    Route::post('/import-products-mapping', [ProductController::class, 'importProductsWithMapping']);
+    Route::post('/import-products', [ProductController::class, 'importProductsWithoutMapping']);
+    Route::get('/map-excel', function(){
+        return view('show_excel');
+    })->name('map-excel');
 });
 require __DIR__.'/auth.php';
 

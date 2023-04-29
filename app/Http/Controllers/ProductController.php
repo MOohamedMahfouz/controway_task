@@ -18,7 +18,58 @@ class ProductController extends Controller
 
 
 
-    public function importProducts(Request $request)
+    public function importProductsWithMapping(Request $request)
+    {
+        // Get the file from the request
+        $file = $request->file('file');
+        // Load the Excel file
+        $spreadsheet = IOFactory::load($file);
+
+        // Get the first worksheet
+        $worksheet = $spreadsheet->getActiveSheet();
+
+        // Get the column mappings from the request
+        $mappings = $request->input('mappings');
+        $mappings = array_merge($mappings,array('0' => $mappings["'name'"] ?? 0));
+        $mappings = array_merge($mappings,array('1' => $mappings["'type'"] ?? 1));
+        $mappings = array_merge($mappings,array('2' => $mappings["'qty'"] ?? 2));
+
+        $mappings = array_flip($mappings);
+        $data = $worksheet->toArray();
+
+        $isFirstElement = 1;
+        // Loop through the rows
+        foreach ($worksheet->getRowIterator() as $row) {
+            if ($isFirstElement) {
+                $isFirstElement = 0;
+                continue;
+            }
+            // Get the cell values
+            $cellIterator = $row->getCellIterator();
+            $cellIterator->setIterateOnlyExistingCells(FALSE);
+            $data = [];
+
+            foreach ($cellIterator as $cell) {
+                $data[] = $cell->getValue();
+            }
+            // Create a new product record
+            if (count($mappings) !=  3) {
+                return to_route('map-excel')->with('error','You should map columns correctly!');
+            }
+            $product = new Product();
+            $product->name = $data[$mappings['name']];
+            $product->type = $data[$mappings['type']];
+            $product->qty = $data[$mappings['qty']];
+            $product->save();
+        }
+
+        // Return a response
+        return to_route('map-excel')->with('success','Successfully added to database');
+    }
+
+
+
+    public function importProductsWithoutMapping(Request $request)
     {
         // Get the file from the request
         $file = $request->file('file');
@@ -92,6 +143,6 @@ class ProductController extends Controller
         }
 
         // Return a response
-        return to_route('dashboard');
+        return to_route('dashboard')->with('success','Successfully added to database');
     }
 }

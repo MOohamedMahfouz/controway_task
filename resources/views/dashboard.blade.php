@@ -3,6 +3,13 @@
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Dashboard') }}
         </h2>
+        <h2 class="pt-10">
+            @if (session()->has('success'))
+                <div class="bg-green-500 text-white text-xl font-bold px-6 py-4 rounded-lg mb-6">
+                    {{ session()->get('success') }}
+                </div>
+            @endif
+        </h2>
     </x-slot>
 
     <div class="py-12">
@@ -19,6 +26,10 @@
                             Import
                         </button>
                     </form>
+                    <br>
+                    <a href="/map-excel" class="mt-8 px-4 py-2 font-bold text-white bg-green-500 rounded-md hover:bg-green-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-green-300">
+                        Mapping
+                    </a>
                 </div>
             </div>
         </div>
