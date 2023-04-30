@@ -29,18 +29,15 @@
                                     <thead>
                                         <tr>
                                             <th class="px-4 py-2 border dark:border-gray-700">
-                                                Excel Column Headers
+                                                Database Field Names
                                             </th>
                                             <th class="px-4 py-2 border dark:border-gray-700">
-                                                Database Field Names
+                                                Excel Column Headers
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="px-4 py-2 border dark:border-gray-700">
-                                                {{$map[0]}}
-                                            </td>
                                             <td class="px-4 py-2 border dark:border-gray-700">
                                                 <select name="mappings['name']" class="form-select dark:bg-gray-700 dark:text-gray-300">
                                                     <option value="name" class="dark:bg-gray-800 dark:text-gray-300">Products</option>
@@ -48,11 +45,11 @@
                                                     <option value="qty" class="dark:bg-gray-800 dark:text-gray-300">Quantity</option>
                                                 </select>
                                             </td>
+                                            <td class="px-4 py-2 border dark:border-gray-700">
+                                                {{$map[0]}}
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <td class="px-4 py-2 border dark:border-gray-700">
-                                                {{$map[1]}}
-                                            </td>
                                             <td class="px-4 py-2 border dark:border-gray-700">
                                                 <select name="mappings['type']" class="form-select dark:bg-gray-700 dark:text-gray-300">
                                                     <option value="type" class="dark:bg-gray-800 dark:text-gray-300">Type</option>
@@ -60,17 +57,20 @@
                                                     <option value="qty" class="dark:bg-gray-800 dark:text-gray-300">Quantity</option>
                                                 </select>
                                             </td>
+                                            <td class="px-4 py-2 border dark:border-gray-700">
+                                                {{$map[1]}}
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <td class="px-4 py-2 border dark:border-gray-700">
-                                                {{$map[2]}}
-                                            </td>
                                             <td class="px-4 py-2 border dark:border-gray-700">
                                                 <select name="mappings['qty']" class="form-select dark:bg-gray-700 dark:text-gray-300">
                                                     <option value="qty" name="qty" class="dark:bg-gray-800 dark:text-gray-300">Quantity</option>
                                                     <option value="name" class="dark:bg-gray-800 dark:text-gray-300">Products</option>
                                                     <option value="type" class="dark:bg-gray-800 dark:text-gray-300">Type</option>
                                                 </select>
+                                            </td>
+                                            <td class="px-4 py-2 border dark:border-gray-700">
+                                                {{$map[2]}}
                                             </td>
                                         </tr>
                                     </tbody>

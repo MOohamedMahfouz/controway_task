@@ -30,10 +30,6 @@
                             Import Products +
                         </button>
                     </form>
-                    <br>
-                    {{-- <a href="/map-excel" class="mt-8 px-4 py-2 font-bold text-white bg-green-500 rounded-md hover:bg-green-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-green-300">
-                        Mapping
-                    </a> --}}
                 </div>
             </div>
         </div>

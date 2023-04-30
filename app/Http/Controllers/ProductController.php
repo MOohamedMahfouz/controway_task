@@ -90,7 +90,7 @@ class ProductController extends Controller
         $path = $file->storeAs('uploads', $filename);
 
         $request->session()->put('file_path', $path);
-        
+
         return view('show_excel',[
             'map' => $map,
         ]);
