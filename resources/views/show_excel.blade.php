@@ -39,38 +39,38 @@
                                     <tbody>
                                         <tr>
                                             <td class="px-4 py-2 border dark:border-gray-700">
-                                                <select name="mappings['name']" class="form-select dark:bg-gray-700 dark:text-gray-300">
-                                                    <option value="name" class="dark:bg-gray-800 dark:text-gray-300">Products</option>
-                                                    <option value="type" class="dark:bg-gray-800 dark:text-gray-300">Type</option>
-                                                    <option value="qty" class="dark:bg-gray-800 dark:text-gray-300">Quantity</option>
-                                                </select>
+                                                Products:
                                             </td>
                                             <td class="px-4 py-2 border dark:border-gray-700">
-                                                {{$map[0]}}
+                                                <select name="mappings[]" class="form-select dark:bg-gray-700 dark:text-gray-300">
+                                                    <option value="{{$map[0]}}" class="dark:bg-gray-800 dark:text-gray-300">{{$map[0]}}</option>
+                                                    <option value="{{$map[1]}}" class="dark:bg-gray-800 dark:text-gray-300">{{$map[1]}}</option>
+                                                    <option value="{{$map[2]}}" class="dark:bg-gray-800 dark:text-gray-300">{{$map[2]}}</option>
+                                                </select>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="px-4 py-2 border dark:border-gray-700">
-                                                <select name="mappings['type']" class="form-select dark:bg-gray-700 dark:text-gray-300">
-                                                    <option value="type" class="dark:bg-gray-800 dark:text-gray-300">Type</option>
-                                                    <option value="name" class="dark:bg-gray-800 dark:text-gray-300">Products</option>
-                                                    <option value="qty" class="dark:bg-gray-800 dark:text-gray-300">Quantity</option>
-                                                </select>
+                                                Type:
                                             </td>
                                             <td class="px-4 py-2 border dark:border-gray-700">
-                                                {{$map[1]}}
+                                                <select name="mappings[]" class="form-select dark:bg-gray-700 dark:text-gray-300">
+                                                    <option value="{{$map[1]}}" class="dark:bg-gray-800 dark:text-gray-300">{{$map[1]}}</option>
+                                                    <option value="{{$map[0]}}" class="dark:bg-gray-800 dark:text-gray-300">{{$map[0]}}</option>
+                                                    <option value="{{$map[2]}}" class="dark:bg-gray-800 dark:text-gray-300">{{$map[2]}}</option>
+                                                </select>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="px-4 py-2 border dark:border-gray-700">
-                                                <select name="mappings['qty']" class="form-select dark:bg-gray-700 dark:text-gray-300">
-                                                    <option value="qty" name="qty" class="dark:bg-gray-800 dark:text-gray-300">Quantity</option>
-                                                    <option value="name" class="dark:bg-gray-800 dark:text-gray-300">Products</option>
-                                                    <option value="type" class="dark:bg-gray-800 dark:text-gray-300">Type</option>
-                                                </select>
+                                                Quantity:
                                             </td>
                                             <td class="px-4 py-2 border dark:border-gray-700">
-                                                {{$map[2]}}
+                                                <select name="mappings[]" class="form-select dark:bg-gray-700 dark:text-gray-300">
+                                                    <option value="{{$map[2]}}" class="dark:bg-gray-800 dark:text-gray-300">{{$map[2]}}</option>
+                                                    <option value="{{$map[0]}}" class="dark:bg-gray-800 dark:text-gray-300">{{$map[0]}}</option>
+                                                    <option value="{{$map[1]}}" class="dark:bg-gray-800 dark:text-gray-300">{{$map[1]}}</option>
+                                                </select>
                                             </td>
                                         </tr>
                                     </tbody>
