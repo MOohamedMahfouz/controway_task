@@ -27,13 +27,13 @@
                             <input type="file" name="file" id="file" class="w-96 py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300" required>
                         </div>
                         <button type="submit" class="mt-4 px-4 py-2 font-bold text-white bg-blue-500 rounded-md hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300">
-                            Import
+                            Import Products +
                         </button>
                     </form>
                     <br>
-                    <a href="/map-excel" class="mt-8 px-4 py-2 font-bold text-white bg-green-500 rounded-md hover:bg-green-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-green-300">
+                    {{-- <a href="/map-excel" class="mt-8 px-4 py-2 font-bold text-white bg-green-500 rounded-md hover:bg-green-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-green-300">
                         Mapping
-                    </a>
+                    </a> --}}
                 </div>
             </div>
         </div>

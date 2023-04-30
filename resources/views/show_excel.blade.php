@@ -1,3 +1,5 @@
+
+@props(['map'])
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -22,10 +24,6 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <form action="/import-products-mapping" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="flex flex-col space-y-2">
-                            <label for="file" class="text-white text-gray-700 font-medium">Select Excel file:</label>
-                            <input type="file" name="file" id="file" class="w-96 py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300" required>
-                        </div>
                             <div class="overflow-x-auto">
                                 <table class="table-auto border-collapse w-full dark:border-gray-700 dark:text-gray-300">
                                     <thead>
@@ -41,7 +39,7 @@
                                     <tbody>
                                         <tr>
                                             <td class="px-4 py-2 border dark:border-gray-700">
-                                                First Column
+                                                {{$map[0]}}
                                             </td>
                                             <td class="px-4 py-2 border dark:border-gray-700">
                                                 <select name="mappings['name']" class="form-select dark:bg-gray-700 dark:text-gray-300">
@@ -53,7 +51,7 @@
                                         </tr>
                                         <tr>
                                             <td class="px-4 py-2 border dark:border-gray-700">
-                                                Second Column
+                                                {{$map[1]}}
                                             </td>
                                             <td class="px-4 py-2 border dark:border-gray-700">
                                                 <select name="mappings['type']" class="form-select dark:bg-gray-700 dark:text-gray-300">
@@ -65,7 +63,7 @@
                                         </tr>
                                         <tr>
                                             <td class="px-4 py-2 border dark:border-gray-700">
-                                                Third Column
+                                                {{$map[2]}}
                                             </td>
                                             <td class="px-4 py-2 border dark:border-gray-700">
                                                 <select name="mappings['qty']" class="form-select dark:bg-gray-700 dark:text-gray-300">
